@@ -30,4 +30,9 @@ public class GreetingController {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
+	@RequestMapping(method = RequestMethod.GET)
+	public Greeting test(@RequestParam(value = "name", defaultValue = "DELETE REQUEST") String name) {
+		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	}
+
 }
